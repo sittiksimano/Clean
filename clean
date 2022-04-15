@@ -1,0 +1,51 @@
+#!/bin/bash
+
+string="---------------------------------------------------------------------"
+string1="                By "
+star="********************************************************************"
+menu(){
+	figlet "Auto Cleaner"
+	echo "$string1"
+	figlet "Abubakkar Khan"
+	echo "$string"
+	echo "	Cleaner - MENU"
+	echo
+	echo "----------------------------"
+	echo
+	echo "1. Fix Broken Install"
+	echo "2. Auto Clean & Remove"
+	echo "3. Distro update and upgrade"
+	echo "4. Full Upgrade distro"
+	echo "5. Exit"
+	echo
+	echo "----------------------------"
+	echo
+	echo "If not works RUN AS ROOT USER"
+
+	echo "Please enter option [1 - 5]:"  
+
+}
+
+option=y
+while [ "$option" != "5" ]
+do
+	menu
+	read option
+	case $option in
+1) apt --fix-broken install;;
+2) apt autoremove -y && apt autoclean -y;;
+3) apt update && apt upgrade -y;;
+4) apt full-upgrade -y;;
+5) break;;
+999) echo "c0d3d6'/ 46u64kk3rk|-|4/\/";;
+*) echo "Wrong option";;
+
+esac
+
+
+read -p "Press [enter] key to continue..." 
+clear
+
+done
+
+clear
